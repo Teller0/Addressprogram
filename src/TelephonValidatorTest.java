@@ -1,20 +1,26 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class TelephonValidatorTest {
 
+	private TelephonValidator validator;
+
+	@Before
+	private void setUp() {
+		validator = new TelephonValidator();
+	}
+	
 	@Test
 	public void testIsNumber() {
-		TelephonValidator validator = new TelephonValidator();
 		assertTrue(validator.isNumber('0'));
 		assertFalse(validator.isNumber('o'));
 	}
 
 	@Test
 	public void testValidate() {
-		TelephonValidator validator = new TelephonValidator();
 		assertTrue(validator.validate("1232345"));
 		assertFalse(validator.validate("2345wer3d"));
 		assertTrue(validator.validate("+42323434"));
