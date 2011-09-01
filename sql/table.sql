@@ -5,3 +5,4 @@ create table addresses (
        id	   integer primary key
 );
 
+create sequence seq_addresses_id start with 30;
