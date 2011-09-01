@@ -20,6 +20,7 @@ public class JdbcDao implements IDao {
                         ClassNotFoundException {
                 Class.forName(DRIVER);
                 conn = DriverManager.getConnection(DB_PATH, DB_USER, DB_PASSWD);
+                conn.setAutoCommit(true);
         }
         
 		@Override

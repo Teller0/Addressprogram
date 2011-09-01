@@ -6,7 +6,6 @@ import java.awt.event.KeyListener;
 import javax.swing.JTextField;
 
 import validation.IValidator;
-import validation.TelephonValidator;
 
 public class ValidatedTextField extends JTextField {
 
