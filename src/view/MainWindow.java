@@ -35,6 +35,9 @@ public class MainWindow extends JFrame {
 			if (validateInput()) {
 				Address address = new Address(lastNameField.getText(),givenNameField.getText(),phoneNumberField.getText());
 				DaoFactory.getInstance().getDao().insertAddress(address);
+				lastNameField.setText("");
+				givenNameField.setText("");
+				phoneNumberField.setText("");
 			}
 		}
 
