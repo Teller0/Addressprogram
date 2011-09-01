@@ -9,6 +9,7 @@ import java.util.Collection;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import validation.NameValidator;
@@ -18,6 +19,25 @@ import database.Address;
 import database.DaoFactory;
 
 public class MainWindow extends JFrame {
+
+	public class P_HelpButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JOptionPane.showMessageDialog(MainWindow.this, "You suck!");
+		}
+
+	}
+
+	public class P_ShowButtonListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
 
 	private class P_QuitButtonListener implements ActionListener {
 
@@ -48,15 +68,19 @@ public class MainWindow extends JFrame {
 
 	public MainWindow() {
 		setSize(400, 200);
-		setLayout(new GridLayout(4,2));
+		setLayout(new GridLayout(5,2));
 		lastNameField = new JTextField();
 		givenNameField = new JTextField();
 		phoneNumberField = new JTextField();
 		
 		JButton saveButton = new JButton("Save");
+		JButton showButton = new JButton("Show");
+		JButton helpButton = new JButton("Help");
 		JButton quitButton = new JButton("Quit");
 
 		saveButton.addActionListener(new P_SaveButtonListener());
+		showButton.addActionListener(new P_ShowButtonListener());
+		helpButton.addActionListener(new P_HelpButtonListener());
 		quitButton.addActionListener(new P_QuitButtonListener());
 		
 		validations.add(new FieldValidator(new NameValidator(), lastNameField));
@@ -70,6 +94,8 @@ public class MainWindow extends JFrame {
 		add(new JLabel("phonenumber:"));
 		add(phoneNumberField);
 		add(saveButton);
+		add(showButton);
+		add(helpButton);
 		add(quitButton);
 		setVisible(true);
 	}
