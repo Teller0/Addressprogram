@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 public class JdbcDao implements IDao {
 	
-        // Some nice hard-coded values.
         private static final String DRIVER = "org.postgresql.Driver";
         private static final String DB_USER = "livia";
         private static final String DB_PASSWD = "thierry";
