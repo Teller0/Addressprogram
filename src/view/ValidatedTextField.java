@@ -27,9 +27,9 @@ public class ValidatedTextField extends JTextField {
 			if (e.getKeyChar() == '\n') {
 				System.out.println(getText());
 				if (validator.validate(getText())) {
-					System.out.println("Is phonenumber");
+					System.out.println(validator.getValidMessage());
 				} else {
-					System.out.println("Error, no phonenumber");
+					System.out.println(validator.getInvalidMessage());
 				}
 			}
 		}

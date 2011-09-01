@@ -11,9 +11,6 @@ public class TelephonValidator implements IValidator {
 		return false;
 	}
 
-	/* (non-Javadoc)
-	 * @see validation.IValidator#validate(java.lang.String)
-	 */
 	@Override
 	public boolean validate(String input) {
 		int start = 0;
@@ -27,4 +24,15 @@ public class TelephonValidator implements IValidator {
 		}
 		return true;
 	}
+
+	@Override
+	public String getValidMessage() {
+		return "valid phonenumber";
+	}
+
+	@Override
+	public String getInvalidMessage() {
+		return "invalid phonenumber";
+	}
 }
+
