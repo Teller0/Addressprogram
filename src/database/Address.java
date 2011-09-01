@@ -1,31 +1,41 @@
 package database;
 
 public class Address {
-	private String lastname;
-	private String givenname;
-	private String phonenumber;
+	private String lastName;
+	private String givenName;
+	private String phoneNumber;
 	private int id;
-	
-	public Address(String lastname, String givenname, String phonenumber, int id) {
-		this.lastname = lastname;
-		this.givenname = givenname;
-		this.phonenumber = phonenumber;
+
+	public Address(String lastName, String givenName, String phoneNumber, int id) {
+		this.lastName = lastName;
+		this.givenName = givenName;
+		this.phoneNumber = phoneNumber;
 		this.id = id;
 	}
+
+	public Address(String lastName, String givenName, String phoneNumber) {
+		this(lastName, givenName, phoneNumber, 0);
+	}
+
 	@Override
 	public String toString() {
-		return "Address [lastname=" + lastname + ", givenname=" + givenname
-				+ ", phonenumber=" + phonenumber + ", id=" + id + "]";
+		return "Address [lastName=" + lastName + ", givenName=" + givenName
+				+ ", phoneNumber=" + phoneNumber + ", id=" + id + "]";
 	}
-	public String getLastname() {
-		return lastname;
+
+	public String getLastName() {
+		return lastName;
 	}
-	public String getGivenname() {
-		return givenname;
+
+	
+	public String getGivenName() {
+		return givenName;
 	}
-	public String getPhonenumber() {
-		return phonenumber;
+
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
+
 	public int getId() {
 		return id;
 	}

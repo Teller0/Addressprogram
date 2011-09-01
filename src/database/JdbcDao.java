@@ -45,12 +45,13 @@ public class JdbcDao implements IDao {
 
 		@Override
 		public void insertAddress(Address address) {
-			String sql = "insert into (lastname,givenname,phonenumber,id) values (?,?,?,nextval('seq_addresses_id')";
+			String sql = "insert into addresses (lastname,givenname,phonenumber,id)" +
+					" values (?,?,?,nextval('seq_addresses_id'))";
 			try {
 				PreparedStatement pstm = conn.prepareStatement(sql);
-				pstm.setString(2, address.getGivenname());
-				pstm.setString(1, address.getLastname());
-				pstm.setString(3, address.getPhonenumber());
+				pstm.setString(2, address.getGivenName());
+				pstm.setString(1, address.getLastName());
+				pstm.setString(3, address.getPhoneNumber());
 				pstm.execute();
 			} catch (SQLException e) {
 				throw new RuntimeException(e);
