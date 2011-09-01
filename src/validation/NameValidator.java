@@ -2,12 +2,7 @@ package validation;
 
 public class NameValidator implements IValidator{
 	public boolean validate(String input){
-		return true;
-	}
-
-	@Override
-	public String getValidMessage() {
-		return "valid name";
+		return input != null && input.length() > 0;
 	}
 
 	@Override

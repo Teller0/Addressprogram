@@ -2,7 +2,7 @@ package validation;
 
 public class TelephonValidator implements IValidator {
 	public boolean isNumber(char input) {
-		char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+		char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 		for (int k = 0; k < 10; k++) {
 			if (numbers[k] == input) {
 				return true;
@@ -13,8 +13,11 @@ public class TelephonValidator implements IValidator {
 
 	@Override
 	public boolean validate(String input) {
+		if (input == null || input.length() == 0) {
+			return false;
+		}
 		int start = 0;
-		if (input.startsWith("+")){
+		if (input.startsWith("+")) {
 			start++;
 		}
 		for (int k = start; k < input.length(); k++) {
@@ -26,13 +29,7 @@ public class TelephonValidator implements IValidator {
 	}
 
 	@Override
-	public String getValidMessage() {
-		return "valid phonenumber";
-	}
-
-	@Override
 	public String getInvalidMessage() {
 		return "invalid phonenumber";
 	}
 }
-
