@@ -1,3 +1,5 @@
+package database;
+
 public class Address {
 	private String lastname;
 	private String givenname;

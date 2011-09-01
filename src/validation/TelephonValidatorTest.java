@@ -10,7 +10,7 @@ public class TelephonValidatorTest {
 	private TelephonValidator validator;
 
 	@Before
-	private void setUp() {
+	public void setUp() {
 		validator = new TelephonValidator();
 	}
 	
