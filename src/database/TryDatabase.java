@@ -7,6 +7,7 @@ public class TryDatabase {
 		for (Address a : dao.getAllAddresses()) {
 			System.out.println(a);
 		}
+		dao.insertAddress(new Address("Brodowsky", "Bernhard", null, 0));
 	}
 
 }
