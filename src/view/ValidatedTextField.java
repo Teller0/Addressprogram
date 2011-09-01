@@ -5,14 +5,18 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JTextField;
 
+import validation.IValidator;
 import validation.TelephonValidator;
 
 public class ValidatedTextField extends JTextField {
 
 	private static final long serialVersionUID = 1L;
-
-	public ValidatedTextField() {
+	
+	private IValidator validator;
+	
+	public ValidatedTextField(IValidator validator) {
 		addKeyListener(new P_KeyListener());
+		this.validator = validator;
 	}
 	
 	
@@ -22,7 +26,6 @@ public class ValidatedTextField extends JTextField {
 		public void keyPressed(KeyEvent e) {
 			if (e.getKeyChar() == '\n') {
 				System.out.println(getText());
-				TelephonValidator validator = new TelephonValidator();
 				if (validator.validate(getText())) {
 					System.out.println("Is phonenumber");
 				} else {

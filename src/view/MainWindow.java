@@ -3,6 +3,8 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import validation.TelephonValidator;
+
 public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -10,7 +12,7 @@ public class MainWindow extends JFrame {
 
 	public MainWindow() {
 		setSize(800, 400);
-		textField = new ValidatedTextField();
+		textField = new ValidatedTextField(new TelephonValidator());
 		add(textField);
 		setVisible(true);
 	}
